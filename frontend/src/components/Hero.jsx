@@ -13,7 +13,7 @@ export default function Hero() {
             </div>
             <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
                 <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                    <span className="text-orange-400">Kuliner</span> Jogja
+                    <span className="text-orange-400">Jogja</span> Culinary
                 </h1>
                 <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed max-w-2xl mx-auto">
                     Menyajikan cita rasa khas Jogja yang otentik dan memikat hati.
