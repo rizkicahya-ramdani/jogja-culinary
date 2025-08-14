@@ -12,19 +12,19 @@ export default function Menu() {
                     {[
                         {
                             name: "Gudeg Jogja",
-                            img: "https://images.unsplash.com/photo-1617196035816-a27b655b13e6",
+                            img: "https://cdn-1.timesmedia.co.id/images/2022/12/21/gudeg-2.jpg",
                             desc: "Gudeg khas Jogja dengan nangka muda yang lembut dan bumbu yang meresap sempurna",
                             price: "Rp 25.000"
                         },
                         {
                             name: "Sate Klathak",
-                            img: "https://images.unsplash.com/photo-1604152135912-04a022e23696",
+                            img: "https://visitingjogja.jogjaprov.go.id/wp-content/uploads/2022/10/sate-klatak-2.jpg",
                             desc: "Sate daging kambing dengan bumbu khas yang dibakar dengan arang kelapa",
                             price: "Rp 35.000"
                         },
                         {
                             name: "Bakpia Pathok",
-                            img: "https://images.unsplash.com/photo-1626011538333-6c27f68eac0c",
+                            img: "https://wiratech.co.id/wp-content/uploads/2018/09/Resep-Cara-Membuat-Bakpia-Pathok.jpg",
                             desc: "Kue tradisional dengan isian kacang hijau yang lembut dan manis",
                             price: "Rp 15.000"
                         }

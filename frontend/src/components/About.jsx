@@ -32,7 +32,7 @@ export default function About() {
                     </div>
                     <div className="relative">
                         <img
-                            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5"
+                            src="https://yogya.co/wp-content/uploads/tugu-jogja.webp"
                             alt="Chef cooking"
                             className="rounded-2xl shadow-2xl"
                         />

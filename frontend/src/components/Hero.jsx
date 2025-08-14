@@ -5,7 +5,7 @@ export default function Hero() {
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
                 <img
-                    src="https://images.unsplash.com/photo-1543352634-a1c51b21504e"
+                    src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/222/2024/09/12/WhatsApp-Image-2024-09-12-at-121923-988365368.jpeg"
                     alt="Jogja Culinary"
                     className="w-full h-full object-cover"
                 />
