@@ -21,5 +21,5 @@ Dibuat menggunakan **React**, **TailwindCSS**, dan **DaisyUI**, dengan ikon dari
 
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/username/landingpage-kuliner-jogja.git
-   cd landingpage-kuliner-jogja
+   git clone https://github.com/rizkicahya-ramdani/jogja-culinary.git
+   cd jogja-culinary
