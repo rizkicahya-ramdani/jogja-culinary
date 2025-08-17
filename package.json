@@ -1,0 +1,19 @@
+{
+  "name": "jogja-culinary",
+  "version": "1.0.0",
+  "description": "Aplikasi kuliner Jogja dengan frontend React dan backend Node.js",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "npm run dev"
+  },
+  "keywords": ["jogja", "culinary", "react", "nodejs", "mysql"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
