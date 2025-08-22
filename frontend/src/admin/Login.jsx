@@ -33,8 +33,8 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50 p-4">
-            <div className="w-full max-w-sm bg-white shadow-lg rounded-xl p-6 text-gray-800">
-                <h1 className="text-2xl font-semibold text-center mb-6">Admin Login</h1>
+            <div className="w-full max-w-sm bg-white shadow-lg rounded-xl p-6">
+                <h1 className="text-2xl text-amber-500 font-semibold text-center mb-6">Admin Login</h1>
                 {error && (
                     <div className="bg-red-100 text-red-700 text-sm p-3 rounded mb-4">
                         {error}
@@ -42,24 +42,24 @@ const Login = () => {
                 )}
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium mb-1">Username</label>
+                        <label className="block text-sm text-gray-800 font-medium mb-1">Username</label>
                         <input
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                            className="w-full border text-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
                             placeholder="admin"
                             autoComplete="username"
                             required
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-1">Password</label>
+                        <label className="block text-sm text-gray-800 font-medium mb-1">Password</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                            className="w-full border text-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
                             placeholder="••••••••"
                             autoComplete="current-password"
                             required
