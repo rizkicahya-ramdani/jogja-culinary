@@ -99,6 +99,31 @@ app.post("/api/menu", authenticateToken, (req, res) => {
     });
 });
 
+app.post("/api/reservasi", (req, res) => {
+    const { nama, email, no_hp, tanggal_reservasi, jumlah_orang, catatan } = req.body || {};
+    if (!nama || !email || !no_hp || !tanggal_reservasi || !jumlah_orang) {
+        return res.status(400).json({ error: "Field nama, email, no_hp, tanggal_reservasi, dan jumlah_orang wajib diisi" });
+    }
+
+    const sql = "INSERT INTO reservasi (nama, email, no_hp, tanggal_reservasi, jumlah_orang, catatan) VALUES (?, ?, ?, ?, ?, ?)";
+    const values = [nama, email, no_hp, tanggal_reservasi, Number(jumlah_orang), catatan || null];
+
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error('Database error:', err);
+            return res.status(500).json({ error: "Database error", details: err.message });
+        }
+        const insertedId = result.insertId;
+        db.query("SELECT * FROM reservasi WHERE id = ?", [insertedId], (err2, rows) => {
+            if (err2) {
+                console.error('Database error:', err2);
+                return res.status(500).json({ error: "Database error", details: err2.message });
+            }
+            return res.status(201).json(rows && rows[0] ? rows[0] : { id: insertedId });
+        });
+    });
+});
+
 app.get("/api/health", (req, res) => {
     res.json({ 
         status: "OK", 
@@ -115,5 +140,7 @@ app.listen(PORT, () => {
     console.log(`  - POST /api/admin/login - Admin login`);
     console.log(`  - GET /api/admin/me - Verify admin session`);
     console.log(`  - GET /api/menu - Get all menu items`);
+    console.log(`  - POST /api/menu - Create menu item (admin only)`);
+    console.log(`  - POST /api/reservasi - Create reservation`);
     console.log(`  - GET /api/health - Health check`);
 });
