@@ -20,3 +20,15 @@ INSERT INTO menu (nama_menu, deskripsi, harga, foto_url) VALUES
 ('Wedang Ronde', 'Minuman hangat dengan ronde (bola-bola ketan) dan jahe', 12000, 'https://images.unsplash.com/photo-1546173159-315724a31696?w=400&h=300&fit=crop'),
 ('Soto Jogja', 'Soto ayam khas Jogja dengan kuah bening dan pelengkap lengkap', 20000, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop'),
 ('Es Dawet Ayu', 'Minuman segar dengan dawet hijau, santan, dan gula merah', 8000, 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop');
+
+-- Buat tabel reservasi
+CREATE TABLE IF NOT EXISTS reservasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    no_hp VARCHAR(20) NOT NULL,
+    tanggal_reservasi DATE NOT NULL,
+    jumlah_orang INT NOT NULL,
+    catatan TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
