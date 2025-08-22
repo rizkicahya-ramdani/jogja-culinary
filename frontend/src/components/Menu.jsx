@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Menu() {
+    const navigate = useNavigate();
     const [menus, setMenus] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -82,7 +84,7 @@ export default function Menu() {
                             <div className="p-6">
                                 <h3 className="text-2xl font-bold text-gray-800 mb-3">{menu.nama_menu}</h3>
                                 <p className="text-gray-600 mb-4 leading-relaxed">{menu.deskripsi}</p>
-                                <button className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold">
+                                <button onClick={() => navigate("/reservasi", { state: { menuId: menu.id } })} className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold">
                                     <i className="fas fa-shopping-cart mr-2"></i>
                                     Pesan Sekarang
                                 </button>
