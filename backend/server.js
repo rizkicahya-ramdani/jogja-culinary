@@ -74,6 +74,31 @@ app.get("/api/menu", (req, res) => {
     });
 });
 
+app.post("/api/menu", authenticateToken, (req, res) => {
+    const { nama_menu, deskripsi, harga, foto_url } = req.body || {};
+    if (!nama_menu || harga === undefined || harga === null || isNaN(Number(harga))) {
+        return res.status(400).json({ error: "Field nama_menu dan harga wajib diisi" });
+    }
+
+    const sql = "INSERT INTO menu (nama_menu, deskripsi, harga, foto_url) VALUES (?, ?, ?, ?)";
+    const values = [nama_menu, deskripsi || null, Number(harga), foto_url || null];
+
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error('Database error:', err);
+            return res.status(500).json({ error: "Database error", details: err.message });
+        }
+        const insertedId = result.insertId;
+        db.query("SELECT * FROM menu WHERE id = ?", [insertedId], (err2, rows) => {
+            if (err2) {
+                console.error('Database error:', err2);
+                return res.status(500).json({ error: "Database error", details: err2.message });
+            }
+            return res.status(201).json(rows && rows[0] ? rows[0] : { id: insertedId });
+        });
+    });
+});
+
 app.get("/api/health", (req, res) => {
     res.json({ 
         status: "OK", 
