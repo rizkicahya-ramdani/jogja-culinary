@@ -12,6 +12,7 @@ import Cta from "./components/Cta.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./admin/Login.jsx";
 import Dashboard from "./admin/Dashboard.jsx";
+import Reservation from "./components/Reservation.jsx";
 
 const HomePage = () => {
     return (
@@ -42,6 +43,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/admin" element={<Login />} />
+                <Route path="/reservasi" element={<Reservation />} />
                 <Route
                     path="/admin/dashboard"
                     element={

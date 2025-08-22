@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,7 +29,10 @@ export default function Navbar() {
                         <a href="#about" className={`transition-colors font-medium ${isScrolled ? 'text-gray-700 hover:text-orange-600' : 'text-white hover:text-orange-400'}`}>Tentang</a>
                         <a href="#contact" className={`transition-colors font-medium ${isScrolled ? 'text-gray-700 hover:text-orange-600' : 'text-white hover:text-orange-400'}`}>Kontak</a>
                     </div>
-                    <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition-colors font-medium">
+                    <button 
+                        onClick={() => navigate("/reservasi")}
+                        className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition-colors font-medium"
+                    >
                         Pesan Sekarang
                     </button>
                 </div>
